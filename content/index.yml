@@ -6,27 +6,27 @@ description: I craft scalable web applications and SaaS platforms where code mee
 hero:
   links:
     - label: Schedule a meeting
-      to: https://github.com/nuxt-ui-templates/portfolio
+      to: https://calendly.com/rejownahmedzisan/30min
       color: neutral
   images:
-    - src: /hero/random-1.avif
-      alt: Random Image 1
-    - src: /hero/random-2.avif
-      alt: Random Image 2
-    - src: /hero/random-3.avif
-      alt: Random Image 3
-    - src: /hero/random-4.avif
-      alt: Random Image 4
-    - src: /hero/random-5.avif
-      alt: Random Image 5
-    - src: /hero/random-6.avif
-      alt: Random Image 6
-    - src: /hero/random-7.avif
-      alt: Random Image 7
-    - src: /hero/random-8.avif
-      alt: Random Image 8
-    - src: /hero/random-9.avif
-      alt: Random Image 9
+    - src: /hero/me.jpg
+      alt: Flirty Me
+    - src: /hero/laravel-talk-2.jpg
+      alt: Speaking at Laravel Conference 2
+    - src: /hero/taking-gift.jpg
+      alt: Receiving an Award
+    - src: /hero/with-my-baby.jpg
+      alt: With My Baby
+    - src: /hero/me-mysql.jpg
+      alt: Working with MySQL
+    # - src: /hero/boat-tour.jpeg
+    #   alt: Enjoying on a Boat
+    - src: /hero/laravel-talk.jpg
+      alt: Speaking at Laravel Conference
+    - src: /hero/community-meetup.jpg
+      alt: At a Community Meetup
+    # - src: /hero/village-tour-with-brothers.jpeg
+    #   alt: Village Tour with Brothers
 about:
   title: About Me
   description: |
@@ -51,12 +51,12 @@ experience:
         icon: i-simple-icons-nuxtdotjs
         url: https://threescratch.com
         color: "#104cba"
-    - position: Web Developer at
+    - position: Freelancing at
       date: 2020 - 2022
       company:
-        name: People Per Hour
+        name: Different Marketplaces
         icon: i-simple-icons-linear
-        url: https://www.peopleperhour.com
+        # url: https://www.peopleperhour.com
         color: "#ff7300"
 testimonials:
   - quote: Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics.
