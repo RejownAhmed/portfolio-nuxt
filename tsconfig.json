@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules", ".nuxt", "dist"],
+  // Nuxt 3 TypeScript configuration
   // https://nuxt.com/docs/guide/concepts/typescript
   "files": [],
   "references": [

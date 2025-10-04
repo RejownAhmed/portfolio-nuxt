@@ -1,7 +1,7 @@
 seo:
   title: Rejown Ahmed - Sr. Fullstack Software Engineer
-  description: I’m Rejown Ahmed, a full-stack software engineer and founder & CTO of Web Makers Ltd. With over 5 years of experience in Laravel, Vue.js, and Nuxt.js, I help startups and businesses build scalable SaaS platforms, web applications, and custom WordPress solutions.
-title: Hey, I'm Rejown Ahmed Sr. Fullstack Software Engineer
+  description: I'm Rejown Ahmed, a full-stack software engineer and founder & CTO of Web Makers Ltd. With over 5 years of experience in Laravel, Vue.js, and Nuxt.js, I help startups and businesses build scalable SaaS platforms, web applications, and custom WordPress solutions.
+title: Hello👋 I'm Rejowan Software Engineer
 description: I craft scalable web applications and SaaS platforms where code meets creativity. I turn ideas into high-performing digital products.
 hero:
   links:
@@ -30,8 +30,10 @@ hero:
 about:
   title: About Me
   description: |
-    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
-    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+    As a full-stack software engineer & product developer with 8 years of solid experience, 
+    I build & Design SaaS Products, Web Applications, Custom WordPress Solutions, 
+    and extensions that solve real problems. My work fuses high performance 
+    code with engaging & intuitive UI/UX, making sure design and technical excellence go hand in hand.
 experience:
   title: Work Experience
   items:
