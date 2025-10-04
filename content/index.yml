@@ -30,34 +30,34 @@ hero:
 about:
   title: About Me
   description: |
-    As a full-stack software engineer & product developer with 8 years of solid experience, 
-    I build & Design SaaS Products, Web Applications, Custom WordPress Solutions, 
-    and extensions that solve real problems. My work fuses high performance 
+    As a full-stack software engineer & product developer with 8 years of solid experience,
+    I build & Design SaaS Products, Web Applications, Custom WordPress Solutions,
+    and extensions that solve real problems. My work fuses high performance
     code with engaging & intuitive UI/UX, making sure design and technical excellence go hand in hand.
 experience:
   title: Work Experience
   items:
-    - position: Brand Designer at
-      date: 2023 - Present
+    - position: Founder & CTO at
+      date: 2024 - present
       company:
-        name: Nuxt
-        logo: i-simple-icons-nuxtdotjs
-        url: https://nuxt.com
-        color: '#00DC82'
-    - position: Assets Designer at
-      date: 2022 - 2023
+        name: Web Makers Ltd
+        icon: i-simple-icons-raycast
+        url: https://webmakerslimited.com
+        color: "hsl(120.65deg 83.35% 51.03%)"
+    - position: Software Engineer at
+      date: 2022 - 2024
       company:
-        name: Raycast
-        logo: i-simple-icons-raycast
-        url: https://raycast.com
-        color: '#FF6363'
-    - position: Senior UX/UI Designer at
-      date: 2020 - 2021
+        name: 3Scratch Technologies
+        icon: i-simple-icons-nuxtdotjs
+        url: https://threescratch.com
+        color: "#104cba"
+    - position: Web Developer at
+      date: 2020 - 2022
       company:
-        name: Linear
-        logo: i-simple-icons-linear
-        url: https://linear.app
-        color: '#5E6AD2'
+        name: People Per Hour
+        icon: i-simple-icons-linear
+        url: https://www.peopleperhour.com
+        color: "#ff7300"
 testimonials:
   - quote: Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics.
     author:

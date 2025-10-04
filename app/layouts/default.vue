@@ -1,10 +1,14 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <UContainer class="sm:border-x border-default pt-10">
     <AppHeader :links="navLinks" />
-    <slot />
+    <div class="relative">
+      <div class="absolute top-0 left-0 w-full h-[600px] -z-1">
+        <BackgroundParticle />
+      </div>
+      <slot />
+    </div>
     <AppFooter />
   </UContainer>
 </template>
