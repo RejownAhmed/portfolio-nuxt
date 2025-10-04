@@ -89,34 +89,121 @@ faq:
   categories:
     - title: Services & Process
       questions:
-        - label: What services do you offer?
+        - label: What services do you offer as a Full-stack Software Engineer?
           content: |
-            I specialize in UX/UI design and front-end development. This includes user research, wireframing, interactive prototyping, creating intuitive user interfaces, building responsive websites and web applications (especially with Vue.js/Nuxt.js), and developing design systems. My goal is to create seamless digital experiences from concept to deployment.
-        - label: What is your design process like?
+            I specialize in full-stack development with expertise in Laravel, Vue.js, Nuxt.js, and Tailwind CSS. My services include:
+            - Building scalable SaaS platforms and web applications
+            - Developing custom WordPress solutions
+            - Creating responsive, high-performance web applications
+            - Setting up robust backend architectures
+            - Implementing modern frontend solutions
+
+            My goal is to deliver high-quality, maintainable code that drives business growth.
+
+        - label: How do you approach SaaS product development?
           content: |
-            My process is collaborative and iterative, typically involving stages like Discovery & Research, Ideation & Prototyping, User Testing, Visual Design, and close collaboration with development teams during implementation. I tailor the process based on project needs, always focusing on user-centered solutions.
-        - label: Do you work with startups?
+            My SaaS development approach focuses on scalability, maintainability, and user experience. I follow these key principles:
+            1. Microservices architecture for scalability (If Needed)
+            2. Multi-tenant database design (Single or Multi Database)
+            3. Secure authentication and authorization
+            4. API-first development
+            5. Subscription and billing integration
+            6. Automated deployment pipelines (CI/CD)
+
+            Having built numerous SaaS platforms, I understand the importance of choosing the right tech stack and architecture for long-term success.
+
+        - label: What's your expertise in building custom business solutions?
           content: |
-            Absolutely! I enjoy working with startups to help shape their product vision and create user-friendly interfaces from the ground up. I can adapt my process to fit the fast-paced startup environment.
+            With over 6 years of experience in full-stack development, I specialize in creating tailored business solutions that scale. This includes:
+            - Custom CRM and ERP systems
+            - Business process automation
+            - Integration with third-party services
+            - Data migration and transformation
+            - Performance optimization
+
+            I have a proven track record of delivering solutions that improve efficiency and drive business growth.
     - title: Pricing & Timelines
       questions:
-        - label: How much does a project typically cost?
+        - label: What's your pricing structure for different project types?
           content: |
-            Project costs vary based on scope, complexity, features, and timeline. For comprehensive UX/UI design and front-end development projects, my engagements typically start around $5,000, with average projects ranging between $8,000 and $25,000. For consulting or specific design tasks, my day rate is $700.
-        - label: What are your payment terms?
+            My pricing is structured based on project complexity and scope:
+            - MVP Development: Starting from $600 for basic proof of concept
+            - Small-Medium Web Apps: $2,500 - $15,000
+            - Full SaaS Applications: $15,000 - $35,000
+            - Custom Business Solutions: Price varies based on requirements
+            
+            Each project is unique, and I provide detailed quotes after understanding your specific needs and goals.
+
+        - label: What are your payment terms and methods?
           content: |
-            I generally require a 40% deposit to schedule the project and begin work, with the remaining 60% due upon successful project completion and delivery. I accept payments via bank transfer and Stripe.
-        - label: How long does a typical project take?
+            I offer flexible payment terms to ensure smooth project progression:
+            - 40% initial deposit to commence work
+            - 30% at project midpoint milestones
+            - 30% upon successful completion
+            
+            I accept payments via:
+            - Bank Transfer
+            - Stripe
+            - Other payment methods can be discussed based on your location
+
+        - label: How do you handle project timelines and deliverables?
           content: |
-            Timelines depend heavily on the project's scope and complexity. Smaller projects might take 3-4 weeks, while larger, more involved projects can range from 2 to 4 months. I always provide a detailed timeline estimate after the initial discovery phase.
-        - label: Do you offer retainers or ongoing support?
+            Project timelines are carefully structured based on scope:
+            - MVPs: 2-4 weeks
+            - Medium-sized projects: 1-3 months
+            - Full SaaS platforms: 3-6 months
+            
+            Each project includes:
+            - Detailed project roadmap
+            - Weekly progress updates
+            - Regular demo sessions
+            - Systematic testing phases
+            
+            I believe in transparent communication and keeping you updated throughout the development process.
+
+        - label: What kind of post-launch support do you provide?
           content: |
-            Yes, for clients needing ongoing design support, feature development, or maintenance, I offer monthly retainer options tailored to specific needs. Let's discuss if this is something you're interested in.
+            I offer comprehensive post-launch support options:
+            - 2 weeks of free bug fixes and support
+            - Monthly maintenance packages starting from $500
+            - Priority support for critical issues
+            - Performance monitoring and optimization
+            - Feature enhancement consultations
+            
+            I'm committed to ensuring your application runs smoothly after launch.
     - title: About Me
       questions:
-        - label: What do you enjoy most about your work?
+        - label: What's your background and technical journey?
           content: |
-            I love the challenge of solving complex problems through design and technology. It's incredibly rewarding to see people interact with something I've created and find it genuinely useful and easy to navigate. Bridging the gap between user needs and technical possibilities is what truly excites me.
-        - label: What are your hobbies outside of work?
+            As a Full-stack Software Engineer and CTO, my journey includes:
+            - 6+ years of professional development experience
+            - Founded and leading Web Makers Ltd as CTO
+            - Expert in Laravel, Vue.js, and Nuxt.js ecosystem
+            - Regular speaker at Laravel conferences
+            - Active community contributor and mentor
+            
+            I've evolved from a developer to a technical leader who understands both business and technical challenges.
+
+        - label: How do you ensure project success and quality?
           content: |
-            When I'm not designing or coding, I enjoy exploring Boston's neighborhoods, trying out new coffee shops, and hiking in the nearby reservations. I'm also passionate about photography and occasionally contribute to open-source projects.
+            My approach to delivering high-quality solutions involves:
+            - Thorough requirements analysis and planning
+            - Test-driven development practices
+            - Continuous integration and deployment
+            - Regular code reviews and optimization
+            - Performance monitoring and scaling
+            - Comprehensive documentation
+            - Knowledge transfer and team training
+            
+            I believe in building not just working solutions, but maintainable, scalable, and future-proof applications.
+
+        - label: What makes you passionate about technology and development?
+          content: |
+            My passion for technology stems from:
+            - The joy of solving complex business problems
+            - Creating impactful solutions that help businesses grow
+            - Mentoring and knowledge sharing in the tech community
+            - Continuous learning and adaptation to new technologies
+            - Building lasting relationships with clients and partners
+            
+            I love seeing how technology can transform businesses and improve people's lives.

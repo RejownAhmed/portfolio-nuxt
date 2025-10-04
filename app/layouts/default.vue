@@ -1,14 +1,18 @@
 <script setup lang="ts"></script>
 
 <template>
-  <UContainer class="sm:border-x border-default pt-10">
-    <AppHeader :links="navLinks" />
-    <div class="relative">
-      <div class="absolute top-0 left-0 w-full h-[600px] -z-1">
-        <BackgroundParticle />
+  <div>
+    <UContainer class="sm:border-x border-default pt-10">
+      <AppHeader :links="navLinks" />
+      <div class="relative">
+        <div class="absolute top-0 left-0 w-full h-[600px] -z-1">
+          <BackgroundParticle />
+        </div>
+        <slot />
       </div>
-      <slot />
-    </div>
-    <AppFooter />
-  </UContainer>
+    </UContainer>
+    <UContainer class="px-0 sm:px-0 lg:px-0">
+      <AppFooter />
+    </UContainer>
+  </div>
 </template>
