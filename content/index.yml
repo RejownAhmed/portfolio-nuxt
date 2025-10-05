@@ -44,6 +44,13 @@ experience:
         icon: i-simple-icons-raycast
         url: https://webmakerslimited.com
         color: "hsl(120.65deg 83.35% 51.03%)"
+    - position: Founder at
+      date: 2022 - present
+      company:
+        name: Bright Youth Academy
+        icon: i-simple-icons-raycast
+        url: https://brightyouthacademy.com
+        color: "hsl(252.77deg 95.28% 58.43%)"
     - position: Software Engineer at
       date: 2022 - 2024
       company:

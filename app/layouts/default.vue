@@ -10,9 +10,9 @@
         </div>
         <slot />
       </div>
-    </UContainer>
-    <UContainer class="px-0 sm:px-0 lg:px-0">
       <AppFooter />
     </UContainer>
+    <!-- <UContainer class="px-0 sm:px-0 lg:px-0">
+    </UContainer> -->
   </div>
 </template>
