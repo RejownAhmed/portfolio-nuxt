@@ -1,23 +1,21 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('about', () => {
-  return queryCollection('about').first()
-})
+const { data: page } = await useAsyncData("about", () => {
+  return queryCollection("about").first();
+});
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
-    fatal: true
-  })
+    statusMessage: "Page not found",
+    fatal: true,
+  });
 }
-
-const { global } = useAppConfig()
 
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
   description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
-})
+  ogDescription: page.value?.seo?.description || page.value?.description,
+});
 </script>
 
 <template>
@@ -33,23 +31,30 @@ useSeoMeta({
         links: 'justify-start'
       }"
     >
-      <UColorModeAvatar
-        class="sm:rotate-4 size-36 rounded-lg ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
-        :light="global.picture?.light!"
-        :dark="global.picture?.dark!"
-        :alt="global.picture?.alt!"
-      />
+      <div
+        v-if="page.picture.url"
+        class="items-center justify-center shrink-0 select-none align-middle bg-elevated text-2xl hidden dark:block sm:rotate-4 size-36 overflow-hidden rounded-lg ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+      >
+        <NuxtImg
+          class="h-full w-full rounded-[inherit] object-cover"
+          :src="page.picture.url"
+          :alt="page.picture?.alt || page.title"
+          width="144"
+          height="144"
+          max-width="auto"
+          priority
+        />
+      </div>
     </UPageHero>
     <UPageSection
       :ui="{
-        container: '!pt-0'
+        container: '!pt-0',
       }"
     >
-      <MDC
-        :value="page.content"
-        unwrap="p"
-      />
-      <div class="flex flex-row justify-center items-center py-10 space-x-[-2rem]">
+      <MDC :value="page.content" unwrap="p" />
+      <div
+        class="flex flex-row justify-center items-center py-10 space-x-[-2rem]"
+      >
         <PolaroidItem
           v-for="(image, index) in page.images"
           :key="index"

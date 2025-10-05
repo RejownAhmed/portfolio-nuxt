@@ -123,6 +123,10 @@ export default defineContentConfig({
       type: 'page',
       source: 'about.yml',
       schema: z.object({
+        picture: z.object({
+          url: z.string().editor({ input: 'media' }),
+          alt: z.string()
+        }),
         content: z.object({}),
         images: z.array(createImageSchema())
       })
