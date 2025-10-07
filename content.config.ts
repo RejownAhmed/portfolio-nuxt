@@ -130,6 +130,19 @@ export default defineContentConfig({
         content: z.object({}),
         images: z.array(createImageSchema())
       })
+    }),
+    bookmarks: defineCollection({
+      type: 'page',
+      source: 'bookmarks.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        links: z.array(z.object({
+          label: z.string(),
+          icon: z.string().optional(),
+          url: z.string().editor({ input: 'media' })
+        }))
+      })
     })
   }
 })

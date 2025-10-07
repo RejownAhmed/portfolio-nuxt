@@ -35,24 +35,7 @@ useSeoMeta({
         description: '!mx-0 text-left',
         links: 'justify-start'
       }"
-    >
-      <template #links>
-        <div
-          v-if="page.links"
-          class="flex items-center gap-2"
-        >
-          <UButton
-            :label="page.links[0]?.label"
-            :to="global.meetingLink"
-            v-bind="page.links[0]"
-          />
-          <UButton
-            :to="`mailto:${global.email}`"
-            v-bind="page.links[1]"
-          />
-        </div>
-      </template>
-    </UPageHero>
+    />
     <UPageSection
       :ui="{
         container: '!pt-0'

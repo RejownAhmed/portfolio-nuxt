@@ -9,6 +9,13 @@
 }
 
 :root {
+  --ui-primary: var(--ui-color-success-500);
+  --ui-secondary: var(--ui-color-secondary-500);
+  --ui-success: var(--ui-color-success-500);
+  --ui-info: var(--ui-color-info-500);
+  --ui-warning: var(--ui-color-warning-500);
+  --ui-error: var(--ui-color-error-500);
+
   --ui-container: var(--container-4xl);
 
   ::selection {
@@ -17,7 +24,10 @@
   }
 }
 
+
 .dark {
+  --ui-primary: var(--ui-color-success-400);
+
   ::selection {
     color: #ffffff;
     background-color: #474747;

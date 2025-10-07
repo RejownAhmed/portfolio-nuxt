@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, watch, useTemplateRef } from 'vue';
-import { Renderer, Program, Mesh, Triangle, Vec2 } from 'ogl';
+import { onMounted, onUnmounted, watch, useTemplateRef } from 'vue'
+import { Renderer, Program, Mesh, Triangle, Vec2 } from 'ogl'
 
 interface DarkVeilProps {
-  hueShift?: number;
-  noiseIntensity?: number;
-  scanlineIntensity?: number;
-  speed?: number;
-  scanlineFrequency?: number;
-  warpAmount?: number;
-  resolutionScale?: number;
+  hueShift?: number
+  noiseIntensity?: number
+  scanlineIntensity?: number
+  speed?: number
+  scanlineFrequency?: number
+  warpAmount?: number
+  resolutionScale?: number
 }
 
 const props = withDefaults(defineProps<DarkVeilProps>(), {
@@ -20,14 +20,14 @@ const props = withDefaults(defineProps<DarkVeilProps>(), {
   scanlineFrequency: 0,
   warpAmount: 0,
   resolutionScale: 1
-});
+})
 
-const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef');
+const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
 
 const vertex = `
 attribute vec2 position;
 void main(){gl_Position=vec4(position,0.0,1.0);}
-`;
+`
 
 const fragment = `
 #ifdef GL_ES
@@ -94,61 +94,61 @@ void main(){
     col.rgb+=(rand(gl_FragCoord.xy+uTime)-0.5)*uNoise;
     gl_FragColor=vec4(clamp(col.rgb,0.0,1.0),1.0);
 }
-`;
+`
 
-let renderer: Renderer | null = null;
-let program: Program | null = null;
-let mesh: Mesh | null = null;
-let frame: number | null = null;
-let start: number = 0;
+let renderer: Renderer | null = null
+let program: Program | null = null
+let mesh: Mesh | null = null
+let frame: number | null = null
+let start: number = 0
 
 const cleanup = () => {
   if (frame) {
-    cancelAnimationFrame(frame);
-    frame = null;
+    cancelAnimationFrame(frame)
+    frame = null
   }
-  window.removeEventListener('resize', resize);
-};
+  window.removeEventListener('resize', resize)
+}
 
 const resize = () => {
-  if (!canvasRef.value || !renderer || !program) return;
+  if (!canvasRef.value || !renderer || !program) return
 
-  const parent = canvasRef.value.parentElement;
-  if (!parent) return;
+  const parent = canvasRef.value.parentElement
+  if (!parent) return
 
-  const w = parent.clientWidth;
-  const h = parent.clientHeight;
-  renderer.setSize(w * props.resolutionScale, h * props.resolutionScale);
-  program.uniforms.uResolution.value.set(w, h);
-};
+  const w = parent.clientWidth
+  const h = parent.clientHeight
+  renderer.setSize(w * props.resolutionScale, h * props.resolutionScale)
+  program.uniforms.uResolution.value.set(w, h)
+}
 
 const loop = () => {
-  if (!program || !renderer || !mesh) return;
+  if (!program || !renderer || !mesh) return
 
-  program.uniforms.uTime.value = ((performance.now() - start) / 1000) * props.speed;
-  program.uniforms.uHueShift.value = props.hueShift;
-  program.uniforms.uNoise.value = props.noiseIntensity;
-  program.uniforms.uScan.value = props.scanlineIntensity;
-  program.uniforms.uScanFreq.value = props.scanlineFrequency;
-  program.uniforms.uWarp.value = props.warpAmount;
-  renderer.render({ scene: mesh });
-  frame = requestAnimationFrame(loop);
-};
+  program.uniforms.uTime.value = ((performance.now() - start) / 1000) * props.speed
+  program.uniforms.uHueShift.value = props.hueShift
+  program.uniforms.uNoise.value = props.noiseIntensity
+  program.uniforms.uScan.value = props.scanlineIntensity
+  program.uniforms.uScanFreq.value = props.scanlineFrequency
+  program.uniforms.uWarp.value = props.warpAmount
+  renderer.render({ scene: mesh })
+  frame = requestAnimationFrame(loop)
+}
 
 onMounted(() => {
-  if (!canvasRef.value) return;
+  if (!canvasRef.value) return
 
-  const canvas = canvasRef.value;
-  const parent = canvas.parentElement;
-  if (!parent) return;
+  const canvas = canvasRef.value
+  const parent = canvas.parentElement
+  if (!parent) return
 
   renderer = new Renderer({
     dpr: Math.min(window.devicePixelRatio, 2),
     canvas
-  });
+  })
 
-  const gl = renderer.gl;
-  const geometry = new Triangle(gl);
+  const gl = renderer.gl
+  const geometry = new Triangle(gl)
 
   program = new Program(gl, {
     vertex,
@@ -162,20 +162,20 @@ onMounted(() => {
       uScanFreq: { value: props.scanlineFrequency },
       uWarp: { value: props.warpAmount }
     }
-  });
+  })
 
-  mesh = new Mesh(gl, { geometry, program });
+  mesh = new Mesh(gl, { geometry, program })
 
-  window.addEventListener('resize', resize);
-  resize();
+  window.addEventListener('resize', resize)
+  resize()
 
-  start = performance.now();
-  loop();
-});
+  start = performance.now()
+  loop()
+})
 
 onUnmounted(() => {
-  cleanup();
-});
+  cleanup()
+})
 
 watch(
   () => [
@@ -188,17 +188,19 @@ watch(
   ],
   () => {
     if (program) {
-      program.uniforms.uHueShift.value = props.hueShift;
-      program.uniforms.uNoise.value = props.noiseIntensity;
-      program.uniforms.uScan.value = props.scanlineIntensity;
-      program.uniforms.uScanFreq.value = props.scanlineFrequency;
-      program.uniforms.uWarp.value = props.warpAmount;
+      program.uniforms.uHueShift.value = props.hueShift
+      program.uniforms.uNoise.value = props.noiseIntensity
+      program.uniforms.uScan.value = props.scanlineIntensity
+      program.uniforms.uScanFreq.value = props.scanlineFrequency
+      program.uniforms.uWarp.value = props.warpAmount
     }
   }
-);
+)
 </script>
 
 <template>
-  <canvas ref="canvasRef" class="w-full h-full block" />
+  <canvas
+    ref="canvasRef"
+    class="w-full h-full block"
+  />
 </template>
-

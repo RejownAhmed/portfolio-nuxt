@@ -1,0 +1,12 @@
+title: Important Links & Bookmarks
+description: A curated list of resources and links that I find valuable. Feel free to explore and bookmark them for your own use.
+links:
+  - label: Web Makers Ltd
+    icon: logos:tailwindcss-icon
+    url: https://webmakerslimited.com/
+  - label: Mumins' Network
+    icon: logos:tailwindcss-icon
+    url: https://muminsnetwork.com/
+  - label: Github
+    icon: logos:tailwindcss-icon
+    url: https://github.com/
