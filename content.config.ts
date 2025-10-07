@@ -75,14 +75,17 @@ export default defineContentConfig({
     }),
     projects: defineCollection({
       type: 'data',
-      source: 'projects/*.yml',
+      source: 'projects.yml',
       schema: z.object({
         title: z.string().nonempty(),
         description: z.string().nonempty(),
-        image: z.string().nonempty().editor({ input: 'media' }),
-        url: z.string().nonempty(),
-        tags: z.array(z.string()),
-        date: z.date()
+        projects: z.array(z.object({
+          title: z.string(),
+          thumbnail: z.string().optional().editor({ input: 'media' }),
+          description: z.string().optional(),
+          url: z.string(),
+          date: z.string()
+        }))
       })
     }),
     blog: defineCollection({
@@ -140,7 +143,7 @@ export default defineContentConfig({
         links: z.array(z.object({
           label: z.string(),
           icon: z.string().optional(),
-          url: z.string().editor({ input: 'media' })
+          url: z.string()
         }))
       })
     })

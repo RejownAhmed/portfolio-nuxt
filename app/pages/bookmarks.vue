@@ -44,40 +44,46 @@ function getHost(url: string) {
     />
     <UPageSection
       :ui="{
-        container: '!pt-0'
+        container: '!pt-0 !pb-0'
       }"
     >
       <ul class="space-y-2">
-        <li
+        <Motion
           v-for="(bookmark, index) in page.links"
           :key="index"
+          :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+          :transition="{ delay: 0.2 * index }"
+          :in-view-options="{ once: true }"
         >
-          <a
-            :href="bookmark.url"
-            target="_blank"
-            class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded-lg -m-2 min-w-0 text-base"
-          >
-            <UAvatar
-              :src="bookmark.icon"
-              :alt="bookmark.label"
-              :ui="{ root: 'rounded-md' }"
-              size="lg"
+          <li>
+            <a
+              :href="bookmark.url"
+              target="_blank"
+              class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded-lg -m-2 min-w-0 text-base"
+            >
+              <UAvatar
+                :src="bookmark.icon"
+                :alt="bookmark.label"
+                :ui="{ root: 'rounded-md' }"
+                size="lg"
+              />
+              <p class="truncate text-gray-700 dark:text-gray-200">
+                {{ bookmark.label }}
+              </p>
+              <span class="flex-1" />
+              <span class="text-xs font-medium text-muted">
+                {{ getHost(bookmark.url) }}
+              </span>
+            </a>
+            <!-- v-if="index < page.links?.length - 1" -->
+            <USeparator
+              class="my-2"
+              type="dashed"
+              color="neutral"
             />
-            <p class="text-nowrap text-gray-700 dark:text-gray-200">
-              {{ bookmark.label }}
-            </p>
-            <span class="flex-1" />
-            <span class="text-xs font-medium text-muted">
-              {{ getHost(bookmark.url) }}
-            </span>
-          </a>
-          <!-- v-if="index < page.links?.length - 1" -->
-          <USeparator
-            class="my-2"
-            type="dashed"
-            color="neutral"
-          />
-        </li>
+          </li>
+        </Motion>
       </ul>
     </UPageSection>
   </UPage>

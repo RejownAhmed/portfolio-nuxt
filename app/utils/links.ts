@@ -16,11 +16,11 @@ export const navLinks: NavigationMenuItem[] = [
     icon: 'solar:folder-with-files-outline',
     to: '/projects'
   },
-  {
-    label: 'Public Speaking & Seminars',
-    icon: 'solar:microphone-2-bold',
-    to: '/speaking'
-  },
+  // {
+  //   label: 'Public Speaking & Seminars',
+  //   icon: 'solar:microphone-2-bold',
+  //   to: '/speaking'
+  // },
   {
     label: 'Blog',
     icon: 'solar:document-add-outline',
