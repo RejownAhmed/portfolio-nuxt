@@ -21,6 +21,10 @@ export default defineAppConfig({
         description:
           'mt-2 text-md mx-auto max-w-2xl text-pretty sm:text-md text-muted'
       }
+    },
+    icons: {
+      light: 'solar:moon-outline',
+      dark: 'solar:sun-outline'
     }
   },
   footer: {

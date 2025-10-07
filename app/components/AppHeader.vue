@@ -51,10 +51,6 @@ defineProps<{
         <ColorModeButton
           size="lg"
           :ui="{
-            icons: {
-              light: 'solar:moon-outline',
-              dark: 'solar:sun-outline'
-            },
             base: 'hover:text-success-500 cursor-pointer'
           }"
         />
