@@ -19,7 +19,7 @@ defineProps<{
         linkLabel: 'hidden'
       }"
     >
-      <template #item="{ item, index, active }">
+      <template #item="{ item }">
         <div>
           <UTooltip
             :text="item.label"
@@ -52,8 +52,8 @@ defineProps<{
           size="lg"
           :ui="{
             icons: {
-              light: 'solar:sun-outline',
-              dark: 'solar:moon-outline'
+              light: 'solar:moon-outline',
+              dark: 'solar:sun-outline'
             },
             base: 'hover:text-success-500 cursor-pointer'
           }"
