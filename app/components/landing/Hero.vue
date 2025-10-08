@@ -34,12 +34,14 @@ defineProps<{
         }"
       >
         <div class="relative">
-          <UColorModeAvatar
-            class="size-24 ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
-            :light="global.picture?.light!"
-            :dark="global.picture?.dark!"
-            :alt="global.picture?.alt!"
-            size="3xl"
+          <NuxtImg
+            class="size-24 rounded-full ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+            :src="global.picture.light"
+            :alt="global.picture?.alt || page.title"
+            width="144"
+            height="144"
+            max-width="auto"
+            priority
           />
         </div>
       </Motion>
