@@ -56,11 +56,12 @@ useSeoMeta({
         unwrap="p"
       />
       <div
-        class="flex flex-row justify-center items-center py-10 space-x-[-2rem]"
+        class="m-auto grid grid-cols-2 md:grid-cols-4 justify-center items-center py-10 max-w-max"
       >
         <PolaroidItem
           v-for="(image, index) in page.images"
           :key="index"
+          class="inline-block max-w-[145px]"
           :image="image"
           :index
         />
