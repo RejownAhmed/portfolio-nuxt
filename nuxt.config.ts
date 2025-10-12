@@ -9,20 +9,16 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'motion-v/nuxt'
   ],
-
   devtools: {
     enabled: true
   },
-
   css: ['~/assets/css/main.css'],
 
   compatibilityDate: '2024-11-01',
 
   nitro: {
     prerender: {
-      routes: [
-        '/'
-      ],
+      routes: ['/'],
       crawlLinks: true
     }
   },
