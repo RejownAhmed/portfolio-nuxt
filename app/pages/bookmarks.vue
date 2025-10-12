@@ -44,7 +44,7 @@ function getHost(url: string) {
     />
     <UPageSection
       :ui="{
-        container: '!pt-0 !pb-0'
+        container: '!pt-0'
       }"
     >
       <ul class="space-y-2">

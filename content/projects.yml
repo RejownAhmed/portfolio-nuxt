@@ -1,13 +1,23 @@
 title: Projects
-description: I've worked on a lot of projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.
+description: I've worked on a lot of projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that interests you, check out the code and contribute if you have ideas for how it can be improved.
 projects:
   - title: Meetyy
     # thumbnail: /
-    description: Appointment Management & Mentorship Platform
-    url: "#"
+    description: Appointment Management & Mentorship Platform For Consultants and Mantees
+    url: "https://meetyy.net"
     date: "2024"
-  - title: Bloom Finance App Redesign
+  - title: Maileditor
     # thumbnail: /
-    description: Led the complete UX/UI overhaul and front-end implementation for a personal finance platform.
-    url: "#"
+    description: Best Email Drag & Drop Template Editor & Builder With AI Template Generation
+    url: "https://maileditor.net"
+    date: "2024-2025"
+  - title: Managepro
+    # thumbnail: /
+    description: Best CRM for Online Service Providers. Manage your Clients, Projects, Invoices, Finances, all in one place.
+    url: "https://managepro.io"
+    date: "2024"
+  - title: Uventli
+    # thumbnail: /
+    description: Best Events & Tickets Management Platform. Create events, sell tickets, manage sponsorships, all from one place.
+    url: "https://managepro.io"
     date: "2024"

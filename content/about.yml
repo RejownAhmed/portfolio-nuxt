@@ -4,9 +4,9 @@ picture:
   alt: Rejown Ahmed - Full-stack Software Engineer
 description: Learn about Rejown Ahmed — Full-stack Software Engineer, Laravel & Vue.js Expert, SaaS Developer, and Founder of Web Makers Ltd. Passionate about technology, education, and mentoring the next generation of developers.
 content: |
-  Hi, I'm **Rejown Ahmed**, a Full-stack Software Engineer and Founder & CTO of **Web Makers Ltd.** With over six years of experience, I specialize in **SaaS development, Laravel, Vue.js, Nuxt.js, and WordPress**, helping startups and global businesses build scalable, user-focused digital products.
+  Hi, I'm **Rejown Ahmed**, a Full-stack Software Engineer and Founder & CTO of **Web Makers Ltd.** With over six years of experience, I specialize in **SaaS development, Laravel, React.js, Next.js, Vue.js, Nuxt.js, and WordPress**, helping startups and global businesses build scalable, user-focused digital products.
 
-  My journey began with a passion for blending **design and technology** — creating intuitive, high-performing experiences powered by clean, maintainable code. Over the years, I’ve built everything from **SaaS platforms** and **custom WordPress plugins** to **Chrome, Gmail, and Outlook extensions**, always focused on performance, UX, and scalability.
+  My journey began with a passion for blending **design and technology** — creating intuitive, high-performing experiences powered by clean, maintainable code. Over the years, I’ve built everything from **Multi Tenant SaaS platforms** and **custom WordPress plugins** to **Chrome, Gmail, and Outlook extensions**, always focused on performance, UX, and scalability.
 
   ### My Development Philosophy
 
@@ -21,7 +21,7 @@ content: |
   Beyond coding, I dedicate time to **volunteer work** supporting **homeless and underprivileged children**. I’m also the founder of **Beright Youth Academy**, where I teach **Web Development** and **English Language**, empowering young learners to build confidence and digital skills.
   I regularly provide **consultancy and mentoring** for aspiring developers and entrepreneurs, helping them navigate the world of tech and startup growth.
 
-  Thanks for visiting my portfolio! Feel free to explore my [projects](/projects) or [get in touch](/#contact) if you’re looking for a **SaaS development partner**, **Laravel expert**, or **Vue.js consultant**.
+  Thanks for visiting my portfolio! Feel free to explore my [projects](/projects) or [get in touch](/#contact) if you’re looking for a **SaaS development partner**, **Laravel expert**, or **React/Vue consultant**.
 images:
   - src: /about/volunteering.jpg
     alt: Volunteering - Teaching and Feeding Homeless Children
