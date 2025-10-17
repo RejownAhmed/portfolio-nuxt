@@ -8,7 +8,12 @@ const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection('blog').path(route.path).first()
 )
-if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+if (!page.value)
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+    fatal: true
+  })
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryCollectionItemSurroundings('blog', route.path, {
     fields: ['description']
@@ -16,22 +21,54 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
 )
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
-const blogNavigation = computed(() => navigation.value.find(item => item.path === '/blog')?.children || [])
+const blogNavigation = computed(
+  () => navigation.value.find(item => item.path === '/blog')?.children || []
+)
 
-const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(blogNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
+const breadcrumb = computed(() =>
+  mapContentNavigation(
+    findPageBreadcrumb(blogNavigation?.value, page.value?.path)
+  ).map(({ icon, ...link }) => link)
+)
 
 if (page.value.image) {
   defineOgImage({ url: page.value.image })
 } else {
-  defineOgImageComponent('Blog', {
-    headline: breadcrumb.value.map(item => item.label).join(' > ')
-  }, {
-    fonts: ['Geist:400', 'Geist:600']
-  })
+  defineOgImageComponent(
+    'Blog',
+    {
+      headline: breadcrumb.value.map(item => item.label).join(' > ')
+    },
+    {
+      fonts: ['Geist:400', 'Geist:600']
+    }
+  )
 }
 
 const title = page.value?.seo?.title || page.value?.title
 const description = page.value?.seo?.description || page.value?.description
+const colorMode = useColorMode()
+
+useHead({
+  script: [
+    {
+      'src': 'https://giscus.app/client.js',
+      'async': true,
+      'crossorigin': 'anonymous',
+      'data-repo': 'RejownAhmed/portfolio-nuxt',
+      'data-repo-id': 'R_kgDOP72ffg',
+      'data-category': 'Blog Posts',
+      'data-category-id': 'DIC_kwDOP72ffs4CwwGX',
+      'data-mapping': 'title',
+      'data-strict': '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-input-position': 'top',
+      'data-theme': () => colorMode.value,
+      'data-lang': 'en'
+    }
+  ]
+})
 
 useSeoMeta({
   title,
@@ -63,16 +100,14 @@ const formatDate = (dateString: string) => {
           Blog
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
-          <div class="flex text-xs text-muted items-center justify-center gap-2">
+          <div
+            class="flex text-xs text-muted items-center justify-center gap-2"
+          >
             <span v-if="page.date">
               {{ formatDate(page.date) }}
             </span>
-            <span v-if="page.date && page.minRead">
-              -
-            </span>
-            <span v-if="page.minRead">
-              {{ page.minRead }} MIN READ
-            </span>
+            <span v-if="page.date && page.minRead"> - </span>
+            <span v-if="page.minRead"> {{ page.minRead }} MIN READ </span>
           </div>
           <NuxtImg
             :src="page.image"
@@ -107,11 +142,14 @@ const formatDate = (dateString: string) => {
               variant="link"
               color="neutral"
               label="Copy link"
-              @click="copyToClipboard(articleLink, 'Article link copied to clipboard')"
+              @click="
+                copyToClipboard(articleLink, 'Article link copied to clipboard')
+              "
             />
           </div>
           <UContentSurround :surround />
         </UPageBody>
+        <div class="giscus pb-5" />
       </UPage>
     </UContainer>
   </UMain>
