@@ -1,7 +1,6 @@
 ---
 title: "How to Transition from Developer to Technical Leader: Thinking Beyond the Code"
-description: Discover how to become a leader with strategic thinking, anticipating edge cases, and making informed decisions can prevent technical debt and 
-drive long-term success.
+description: Discover how to become a leader with strategic thinking, anticipating edge cases, and making informed decisions can prevent technical debt and drive long-term success.
 date: 2025-10-18
 image: /blog/what-separayes-a-technical-leader-from-a-developer.png
 minRead: 7
