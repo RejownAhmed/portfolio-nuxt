@@ -4,22 +4,26 @@ import { mapContentNavigation } from '@nuxt/ui/utils/content'
 import { findPageBreadcrumb } from '@nuxt/content/utils'
 
 const route = useRoute()
+// remove trailing slash from path
+const actualPath = route.path.replace(/\/$/, '')
 
-const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first(),
-{ server: true })
-
-if (!page.value)
+const { data } = await useAsyncData(`post-${actualPath}`, () =>
+  Promise.all([
+    queryCollection('blog').path(actualPath).first(),
+    queryCollectionItemSurroundings('blog', route.path, {
+      fields: ['description']
+    })
+  ])
+)
+const page = data.value?.[0]
+if (!page)
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
     fatal: true
   })
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings('blog', route.path, {
-    fields: ['description']
-  }),
-{ server: true })
+
+const surround = data.value?.[1]
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 const blogNavigation = computed(
@@ -28,12 +32,12 @@ const blogNavigation = computed(
 
 const breadcrumb = computed(() =>
   mapContentNavigation(
-    findPageBreadcrumb(blogNavigation?.value, page.value?.path)
+    findPageBreadcrumb(blogNavigation?.value, page.path)
   ).map(({ icon, ...link }) => link)
 )
 
-if (page.value.image) {
-  defineOgImage({ url: page.value.image })
+if (page.image) {
+  defineOgImage({ url: page.image })
 } else {
   defineOgImageComponent(
     'Blog',
@@ -46,8 +50,8 @@ if (page.value.image) {
   )
 }
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const title = page.seo?.title || page.title
+const description = page.seo?.description || page.description
 const colorMode = useColorMode()
 
 useHead({
