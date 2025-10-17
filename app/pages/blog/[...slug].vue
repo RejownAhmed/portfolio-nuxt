@@ -6,8 +6,9 @@ import { findPageBreadcrumb } from '@nuxt/content/utils'
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first()
-)
+  queryCollection('blog').path(route.path).first(),
+{ server: true })
+
 if (!page.value)
   throw createError({
     statusCode: 404,
@@ -17,8 +18,8 @@ if (!page.value)
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryCollectionItemSurroundings('blog', route.path, {
     fields: ['description']
-  })
-)
+  }),
+{ server: true })
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 const blogNavigation = computed(
