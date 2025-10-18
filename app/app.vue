@@ -4,12 +4,13 @@ const colorMode = useColorMode()
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
 useHead({
-  title: 'Rejown Ahmed - Sr. Software Engineer',
   meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { key: 'description', name: 'description', content: 'Rejown Ahmed - Sr. Software Engineer' },
+    { key: 'og:title', property: 'og:title', content: 'Rejown Ahmed - Sr. Software Engineer' },
+    { key: 'og:description', property: 'og:description', content: 'Hello👋 I\'m Rejown...' },
+    { key: 'og:image', property: 'og:image', content: '/quote.png' },
     { key: 'theme-color', name: 'theme-color', content: color },
-    { name: 'robots', content: 'index, follow' }
+    { key: 'robots', name: 'robots', content: 'index, follow' }
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
@@ -202,13 +203,15 @@ useHead({
 })
 
 useSeoMeta({
+  ogTitle: 'Rejown Ahmed - Sr. Software Engineer',
   ogImage: '/quote.png',
   twitterImage: '/quote.png',
   twitterCard: 'summary_large_image',
   ogDescription: 'Hello👋 I\'m Rejown. A Sr. Full-stack Web Developer building and managing scalable SaaS Applications. I have founded WebMakers Ltd, a SaaS Development Company in Bangladesh',
   twitterDescription: 'Hello👋 I\'m Rejown. A Sr. Full-stack Web Developer building and managing scalable SaaS Applications. I have founded WebMakers Ltd, a SaaS Development Company in Bangladesh',
   ogSiteName: 'Rejown Ahmed Zisan',
-  ogUrl: 'https://rejownahmed.me'
+  ogUrl: 'https://rejownahmed.me',
+  title: 'Rejown Ahmed - Sr. Software Engineer'
 })
 
 const [{ data: navigation }, { data: files }] = await Promise.all([

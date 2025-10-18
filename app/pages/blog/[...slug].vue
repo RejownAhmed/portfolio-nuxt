@@ -54,6 +54,9 @@ const title = page.seo?.title || page.title
 const description = page.seo?.description || page.description
 const colorMode = useColorMode()
 
+const siteUrl = 'https://rejownahmed.me'
+const fullUrl = `${siteUrl}${actualPath}`
+
 useHead({
   script: [
     {
@@ -71,12 +74,42 @@ useHead({
       'data-input-position': 'top',
       'data-theme': () => colorMode.value,
       'data-lang': 'en'
+    },
+    {
+      key: 'schema-blogpost',
+      type: 'application/ld+json',
+      textContent: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        '@id': `${fullUrl}#blog`,
+        'headline': title,
+        'description': description,
+        'image': page.image,
+        'url': fullUrl,
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': fullUrl
+        },
+        'author': {
+          '@type': 'Person',
+          'name': page.author?.name,
+          'image': page.author?.avatar?.src
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Rejown Ahmed',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://rejownahmed.me/we.png'
+          }
+        },
+        'datePublished': page.date,
+        'dateModified': page.date
+      })
     }
+
   ]
 })
-
-const siteUrl = 'https://rejownahmed.me'
-const fullUrl = `${siteUrl}${actualPath}`
 
 useSeoMeta({
   title,
