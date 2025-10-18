@@ -75,11 +75,21 @@ useHead({
   ]
 })
 
+const siteUrl = 'https://rejownahmed.me'
+const fullUrl = `${siteUrl}${actualPath}`
+
 useSeoMeta({
   title,
   description,
+  ogTitle: title,
   ogDescription: description,
-  ogTitle: title
+  ogUrl: fullUrl,
+  ogType: 'article',
+  ogImage: page.image,
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: page.image
 })
 
 const articleLink = computed(() => `${window?.location}`)
