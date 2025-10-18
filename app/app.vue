@@ -9,8 +9,7 @@ useHead({
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { key: 'theme-color', name: 'theme-color', content: color },
-    { name: 'robots', content: 'index, follow' },
-    { name: 'keywords', content: 'Rejown Ahmed, Web Makers Ltd, Full Stack Software Engineer, Laravel Developer, Vue.js Expert, Nuxt.js Developer, React.js Expert, Next.js Developer, SaaS Developer, SaaS Development Company, SaaS Development Partner, Web Application Developer, WordPress Plugin Developer, API Integration Expert, Front-End Developer, Back-End Developer, JavaScript Developer, PHP Developer, Software Engineer Bangladesh, Hire Laravel Developer, Hire Vue.js Developer, Custom Web Development, Scalable Web Applications, Modern Web Apps, Web Performance Optimization, CTO Web Makers Ltd' }
+    { name: 'robots', content: 'index, follow' }
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
